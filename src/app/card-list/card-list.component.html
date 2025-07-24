@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="header">
+    Dynamic Card Editor
+  </div>
+
+  <div class="controls">
+    <button class="add-btn" (click)="addCard()">Add Card</button>
+    <button class="delete-btn" (click)="deleteSelectedCards()">Delete Selected</button>
+  </div>
+
+  <div class="grid">
+    <div *ngFor="let card of cards" class="card">
+      
+      <input type="checkbox" [(ngModel)]="card.selected" class="checkbox" />
+
+     
+      <div *ngIf="!card.editing">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+        <button class="edit-btn" (click)="editCard(card)">Edit</button>
+      </div>
+
+      
+      <div *ngIf="card.editing">
+        <input
+          [(ngModel)]="card.title"
+          placeholder="Card Title"
+          data-gramm="false"
+          spellcheck="false"
+        />
+        <textarea
+          [(ngModel)]="card.description"
+          placeholder="Description"
+          data-gramm="false"
+          spellcheck="false"
+        ></textarea>
+
+        <div class="actions">
+          <button class="save-btn" (click)="saveCard(card)">Save</button>
+          <button class="cancel-btn" (click)="cancelEdit(card)">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
