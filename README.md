@@ -1,8 +1,8 @@
-# Emplay Card Editor Application
+# Card Editor Application
 
 ## Overview
 
-This is a simple Angular application built as part of the Full Stack Internship assignment for Emplay Inc. The app displays a list of cards, each containing a title and a description. Users can edit the description of any card through a popup modal. Changes are saved instantly and reflected in the interface without needing a page reload.
+This is a simple Angular application. The app displays a list of cards, each containing a title and a description. Users can edit the description of any card through a popup modal. Changes are saved instantly and reflected in the interface without needing a page reload.
 ## Features
 Displays a list of cards loaded from a local JSON file
 
